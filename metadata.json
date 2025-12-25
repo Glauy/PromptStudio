@@ -1,0 +1,7 @@
+{
+  "name": "PromptStudio - 东方美学 AI 视觉创作实验室",
+  "description": "基于结构化 DSL 的专业级 AI 提示词创作平台，融合中式美学与现代摄影艺术。提供新手、进阶、专家三种创作模式，支持多场景提示词编译与 Gemini 驱动的智慧润色。",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
