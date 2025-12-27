@@ -8,15 +8,6 @@ export const natureScene: SceneDefinition = {
   description: '以中国传统山水画意境为灵感的大幅风光场景。',
   icon: 'Trees',
   isAvailable: true,
-  defaults: {
-    subject: 'The majestic Huangshan mountains partially covered in swirling sea of clouds',
-    environment: 'ancient pine trees clinging to granite cliffs, ink-wash aesthetic',
-    camera: 'Fujifilm GFX 100 II',
-    cameraSettings: 'f/11, 23mm wide angle, ISO 50, long exposure 2s',
-    lighting: 'ethereal golden hour, soft morning mist',
-    medium: 'landscape fine art photography',
-    quality: '100 megapixels detail, medium format texture'
-  },
   fields: {
     subject: {
       valueType: 'text',

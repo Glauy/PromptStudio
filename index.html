@@ -4,67 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PromptStudio | 专业级 AI 视觉创作 DSL platform</title>
+    <title>PromptStudio | 视觉协议实验室</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --chinese-red: #C0392B;
-            --ink-black: #0A0A0A;
-            --silk-white: #FFFFFF;
-            --premium-gray: #F9F9FB;
+            --silk-white: #FDFDFD;
+            --ink-black: #1A1A1C;
+            /* 模拟物理层级的复合阴影 */
+            --shadow-elevation-low: 0 2px 4px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.03);
+            --shadow-elevation-mid: 0 20px 50px -12px rgba(0,0,0,0.08), 0 10px 20px -5px rgba(0,0,0,0.04);
+            --shadow-elevation-high: 0 50px 100px -20px rgba(0,0,0,0.12), 0 30px 60px -30px rgba(0,0,0,0.15);
         }
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--silk-white);
             color: var(--ink-black);
             -webkit-font-smoothing: antialiased;
-            scroll-behavior: smooth;
         }
         .serif { font-family: 'Noto Serif SC', serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* 极致纸张质感 */
+        .paper-texture {
+            background-image: url("https://www.transparenttextures.com/patterns/handmade-paper.png");
+        }
+
+        /* 磨砂玻璃增强版 */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px) saturate(160%);
+            -webkit-backdrop-filter: blur(24px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        /* 模拟徕卡红色快门 */
+        .shutter-red {
+            background: var(--chinese-red);
+            box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.1), 0 20px 40px rgba(192, 57, 43, 0.25);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .shutter-red:hover {
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 0 0 6px rgba(192, 57, 43, 0.15), 0 30px 60px rgba(192, 57, 43, 0.3);
+        }
+
+        .custom-studio-scroll::-webkit-scrollbar { width: 3px; }
+        .custom-studio-scroll::-webkit-scrollbar-thumb { background: #E2E2E2; border-radius: 10px; }
         
-        .glass-header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-        }
-
-        /* Custom Scrollbar Global */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #E5E7EB;
-            border-radius: 20px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #D1D5DB;
-        }
-
-        /* 专门为 Studio 左侧亮色面板定制的滚动条 */
-        .custom-studio-scroll::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-studio-scroll::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .custom-studio-scroll::-webkit-scrollbar-thumb {
-            background: #F1F1F4;
-            border-radius: 10px;
-            transition: all 0.3s;
-        }
-        .custom-studio-scroll:hover::-webkit-scrollbar-thumb {
-            background: #E2E2E9;
-        }
-
-        /* Selection Color */
-        ::selection {
-            background: rgba(192, 57, 43, 0.1);
-            color: #C0392B;
+        .viewport-frame {
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), var(--shadow-elevation-high);
         }
     </style>
 <script type="importmap">

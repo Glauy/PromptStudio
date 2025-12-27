@@ -8,16 +8,6 @@ export const miniatureScene: SceneDefinition = {
   description: '展示极致工艺细节与东方盆景美学的微观宇宙。',
   icon: 'Search',
   isAvailable: true,
-  defaults: {
-    subject: 'A detailed miniature model of a Jiangnan water town house',
-    environment: 'on an artisan workbench, surrounded by delicate tools',
-    composition: 'tilt-shift effect, macro depth of field',
-    camera: 'Canon EOS R5 with RF 100mm f/2.8L Macro IS USM',
-    cameraSettings: '1.4x magnification, f/8, 20-image focus stack',
-    lighting: 'soft led spot lighting from the side, tiny warm lanterns inside the model',
-    medium: 'macro craftsmanship photography',
-    quality: 'hyper-realistic textures of wood and tile'
-  },
   fields: {
     subject: {
       valueType: 'text',

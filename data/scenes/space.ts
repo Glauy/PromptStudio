@@ -8,15 +8,6 @@ export const spaceScene: SceneDefinition = {
   description: '探索新中式建筑的线条美学，捕捉光影在极简空间中的流动与停留。',
   icon: 'Home',
   isAvailable: true,
-  defaults: {
-    subject: 'A minimalist high-end Zen tea room with a circular moon window',
-    environment: 'modern architectural interior with dark oak wood and natural stone textures',
-    camera: 'Sony A7R V with Canon TS-E 24mm f/3.5L II (Tilt-Shift)',
-    cameraSettings: 'f/11, ISO 100, perfect vertical lines, architectural perspective correction',
-    lighting: 'soft natural light from a side window, long soft shadows, volumetric dust particles',
-    composition: 'symmetrical balance, wide-angle interior photography',
-    quality: 'ultra-high resolution, clean textures, professional architectural finish'
-  },
   fields: {
     subject: {
       valueType: 'text',

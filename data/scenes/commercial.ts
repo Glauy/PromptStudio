@@ -8,14 +8,6 @@ export const commercialScene: SceneDefinition = {
   description: '极致的清晰度与光影控制，展现高端国潮产品的材质美感与品牌质感。',
   icon: 'Briefcase',
   isAvailable: true,
-  defaults: {
-    subject: 'High-end skincare set in white porcelain jars with jade patterns',
-    environment: 'minimalist light gray studio background, high-end stone pedestal',
-    lighting: 'clean professional studio lighting, soft rim light, precise reflections',
-    camera: 'Hasselblad H6D-100c',
-    cameraSettings: 'f/8, 1/125s, ISO 100, focus stacking',
-    quality: 'commercial catalog photography, sharp focus, 8k resolution'
-  },
   fields: {
     subject: {
       valueType: 'text',

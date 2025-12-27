@@ -8,16 +8,6 @@ export const freshScene: SceneDefinition = {
   description: '通透的空气感与高调明朗的生活切片。',
   icon: 'Sun',
   isAvailable: true,
-  defaults: {
-    subject: 'A graceful 25-year-old Chinese woman with a natural smile',
-    environment: 'brightly lit minimalist cafe near a window with sheer curtains',
-    lighting: 'high-key, soft natural backlighting, light airy atmosphere',
-    camera: 'Fujifilm X-T5, Nostalgic Neg film simulation',
-    cameraSettings: 'f/2.0, +0.7ev exposure compensation, shallow depth of field',
-    color: 'pastel tones, desaturated greens and warm whites',
-    medium: 'lifestyle fine-art photography',
-    quality: 'clean, 8k, low contrast, delicate textures'
-  },
   fields: {
     subject: {
       valueType: 'text',

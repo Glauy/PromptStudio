@@ -8,15 +8,6 @@ export const futureScene: SceneDefinition = {
   description: '解构传统元素，重构未来想象。探索“赛博汉风”下的数字机甲与城市文明。',
   icon: 'Cpu',
   isAvailable: true,
-  defaults: {
-    subject: 'A cool 25-year-old Chinese female pilot in sleek high-tech Neo-Hanfu mech armor',
-    environment: 'futuristic mega-city Chongqing with glowing holographic calligraphy and neon lanterns',
-    lighting: 'cyberpunk neon lighting, glowing jade accents, moody red and teal contrast',
-    camera: 'Leica SL2-S with Summilux-C 35mm T1.4',
-    cameraSettings: 'f/1.4, cinematic anamorphic lens flare, high ISO grain',
-    medium: 'sci-fi concept art photography',
-    quality: 'masterpiece, complex digital textures, glowing circuitry'
-  },
   fields: {
     subject: {
       valueType: 'text',

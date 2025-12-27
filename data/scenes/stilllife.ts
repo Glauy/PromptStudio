@@ -8,15 +8,6 @@ export const stillLifeScene: SceneDefinition = {
   description: '捕捉物品在光影中的静默时刻，探讨东方生活方式中的材质与哲学。',
   icon: 'Box',
   isAvailable: true,
-  defaults: {
-    subject: 'A set of fine Ru-ware celadon tea set on a dark weathered wood table',
-    environment: 'quiet tea room with natural light from a paper screen window',
-    composition: 'minimalist, negative space, top-down view',
-    lighting: 'natural window light, soft morning rays, high contrast shadows',
-    camera: 'Sony A7R V with 90mm f/2.8 Macro',
-    cameraSettings: 'f/4.0, shallow depth of field, natural color grading',
-    quality: 'tactile textures, peaceful atmosphere'
-  },
   fields: {
     subject: {
       valueType: 'text',

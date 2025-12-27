@@ -14,6 +14,10 @@ import { futureScene } from './future';
 import { narrativeScene } from './narrative';
 import { placeholderScenes } from './placeholders';
 
+/**
+ * 全局场景定义注册表
+ * 集中管理所有垂直领域的视觉创作空间
+ */
 export const SCENE_DEFINITIONS: Record<SceneId, SceneDefinition> = {
   portrait: portraitScene,
   nature: natureScene,

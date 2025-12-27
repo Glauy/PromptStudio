@@ -1,6 +1,13 @@
 
-import { Category } from '../types';
-import { SCENE_ASSETS } from './assets';
+import { Category, SceneId } from '../types';
+import { OFFICIAL_SCENE_PRESETS } from './scene_presets';
+import { resolvePresetMedia } from './presets';
+
+const getCategoryCover = (id: SceneId): string => {
+  const preset = OFFICIAL_SCENE_PRESETS[id];
+  if (!preset) return '';
+  return resolvePresetMedia(preset).url || '';
+};
 
 export const CATEGORIES: Category[] = [
   { 
@@ -9,7 +16,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Portrait', 
     icon: 'User', 
     description: '东方骨相美学与光影质感。', 
-    coverImage: SCENE_ASSETS.portrait.path
+    coverImage: getCategoryCover('portrait')
   },
   { 
     id: 'nature', 
@@ -17,7 +24,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Nature', 
     icon: 'Trees', 
     description: '山川湖海的壮阔，控制空间与自然光。', 
-    coverImage: SCENE_ASSETS.nature.path
+    coverImage: getCategoryCover('nature')
   },
   { 
     id: 'miniature', 
@@ -25,7 +32,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Miniature World', 
     icon: 'Search', 
     description: '微观宇宙奇迹，极致细节与景深。', 
-    coverImage: SCENE_ASSETS.miniature.path
+    coverImage: getCategoryCover('miniature')
   },
   { 
     id: 'vintage', 
@@ -33,7 +40,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Ancient Grace', 
     icon: 'Film', 
     description: '唐宋风华与明清雅韵的深度重构。', 
-    coverImage: SCENE_ASSETS.vintage.path
+    coverImage: getCategoryCover('vintage')
   },
   { 
     id: 'artistic', 
@@ -41,7 +48,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Artistic Vision', 
     icon: 'Palette', 
     description: '敦煌壁画、工笔重彩与现代数字艺术。', 
-    coverImage: SCENE_ASSETS.artistic.path
+    coverImage: getCategoryCover('artistic')
   },
   { 
     id: 'commercial', 
@@ -49,7 +56,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Commercial', 
     icon: 'Briefcase', 
     description: '极致清晰度与高端国潮产品质感。', 
-    coverImage: SCENE_ASSETS.commercial.path
+    coverImage: getCategoryCover('commercial')
   },
   { 
     id: 'stilllife', 
@@ -57,7 +64,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Still Life', 
     icon: 'Box', 
     description: '宋瓷、茶道等禅意静谧之美。', 
-    coverImage: SCENE_ASSETS.stilllife.path
+    coverImage: getCategoryCover('stilllife')
   },
   { 
     id: 'space', 
@@ -65,7 +72,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Architectural Space', 
     icon: 'Home', 
     description: '新中式建筑线条与极简空间美学。', 
-    coverImage: SCENE_ASSETS.space.path
+    coverImage: getCategoryCover('space')
   },
   { 
     id: 'future', 
@@ -73,7 +80,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Neo-Futurism', 
     icon: 'Cpu', 
     description: '赛博汉风与新中式科幻美学。', 
-    coverImage: SCENE_ASSETS.future.path
+    coverImage: getCategoryCover('future')
   },
   { 
     id: 'narrative', 
@@ -81,7 +88,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Cinematic Story', 
     icon: 'MessageSquare', 
     description: '电影感瞬间与情绪驱动的构图。', 
-    coverImage: SCENE_ASSETS.narrative.path
+    coverImage: getCategoryCover('narrative')
   },
   { 
     id: 'emotional', 
@@ -89,7 +96,7 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Cinematic Mood', 
     icon: 'Heart', 
     description: '电影叙事感，用光影诉说未竟之言。', 
-    coverImage: SCENE_ASSETS.emotional.path
+    coverImage: getCategoryCover('emotional')
   },
   { 
     id: 'fresh', 
@@ -97,6 +104,6 @@ export const CATEGORIES: Category[] = [
     nameEn: 'Fresh Aesthetic', 
     icon: 'Sun', 
     description: '通透空气感与高调明朗的生活切片。', 
-    coverImage: SCENE_ASSETS.fresh.path
+    coverImage: getCategoryCover('fresh')
   }
 ];

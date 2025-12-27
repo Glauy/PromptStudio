@@ -8,13 +8,6 @@ export const artisticScene: SceneDefinition = {
   description: '跨越维度的视觉表达，将敦煌壁画、工笔重彩与现代数字美学完美融合。',
   icon: 'Palette',
   isAvailable: true,
-  defaults: {
-    subject: 'An ethereal 25-year-old Chinese goddess floating among stylized golden clouds',
-    style: 'Neo-Chinese digital art, fusion of traditional ink and futuristic neon',
-    medium: 'Fine art digital painting, high brushstroke texture',
-    color: 'Cinnabar red, mineral green, and gold leaf accents',
-    quality: 'masterpiece, complex details, surreal composition'
-  },
   fields: {
     subject: {
       valueType: 'text',

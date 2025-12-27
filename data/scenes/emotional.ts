@@ -8,15 +8,6 @@ export const emotionalScene: SceneDefinition = {
   description: '以留白与情绪为核心的叙事性影像空间。',
   icon: 'Heart',
   isAvailable: true,
-  defaults: {
-    subject: 'A 25-year-old Chinese man sitting alone in a traditional tea house',
-    mood: 'melancholic and philosophical, wabi-sabi aesthetic',
-    camera: 'Leica M11 with Summilux 35mm f/1.4',
-    cameraSettings: 'f/1.4, slow shutter, cinematic motion blur',
-    lighting: 'single candle light, heavy shadows, film noir look',
-    medium: 'storytelling photography',
-    quality: 'heavy film grain, cinematic color grading'
-  },
   fields: {
     subject: {
       valueType: 'text',

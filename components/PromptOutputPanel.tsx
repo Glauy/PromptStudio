@@ -13,7 +13,8 @@ import {
   Play,
   Zap,
   Download,
-  Maximize2
+  Maximize2,
+  Lock
 } from 'lucide-react';
 import { StructuredPrompt, UserMode } from '../types';
 import CockpitLayout from './common/CockpitLayout';
@@ -97,6 +98,7 @@ interface PromptOutputPanelProps {
   fieldOrder: (keyof StructuredPrompt)[];
   mode: UserMode;
   isOptimizing: boolean;
+  isValid: boolean; // 是否满足必填校验
   onOptimize: () => void;
   onCopy: (text: string) => void;
   onReset: () => void;
@@ -111,6 +113,7 @@ const PromptOutputPanel: React.FC<PromptOutputPanelProps> = ({
   fieldOrder,
   mode,
   isOptimizing,
+  isValid,
   onOptimize,
   onCopy,
   onReset,
@@ -145,6 +148,7 @@ const PromptOutputPanel: React.FC<PromptOutputPanelProps> = ({
   };
 
   const handleRender = async () => {
+    if (!isValid) return;
     setViewMode('visual');
     setIsRendering(true);
     const activeData = Object.keys(optimizedData).length > 0 ? optimizedData : promptData;
@@ -214,32 +218,36 @@ const PromptOutputPanel: React.FC<PromptOutputPanelProps> = ({
           
           <div className="flex items-center space-x-4">
             <button 
+              id="guide-target-btn-render"
               onClick={handleRender}
-              disabled={isRendering}
-              className={`flex-1 flex items-center justify-center py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] transition-all active:scale-95 shadow-2xl bg-white text-black hover:bg-zinc-200 shadow-white/5 border border-white/10`}
+              disabled={isRendering || !isValid}
+              className={`flex-1 flex items-center justify-center py-5 rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] transition-all active:scale-95 shadow-2xl bg-white text-black hover:bg-zinc-200 shadow-white/5 border border-white/10 pointer-events-auto disabled:opacity-30 disabled:cursor-not-allowed`}
             >
               {isRendering ? (
                 <Zap className="w-4 h-4 mr-3 animate-spin text-blue-500" />
+              ) : !isValid ? (
+                <Lock className="w-4 h-4 mr-3 text-zinc-400" />
               ) : (
                 <Play className="w-4 h-4 mr-3 fill-current" />
               )}
-              {isRendering ? '正在编译像素阵列' : '一键渲染视觉作品'}
+              {isRendering ? '正在编译像素阵列' : !isValid ? '未满足必填指令' : '一键渲染视觉作品'}
             </button>
 
             <div className="flex space-x-2">
               <button 
                 onClick={handleCopy}
                 title="拷贝指令"
-                className={`w-16 h-16 flex items-center justify-center bg-zinc-900 border rounded-2xl transition-all group
+                className={`w-16 h-16 flex items-center justify-center bg-zinc-900 border rounded-2xl transition-all group pointer-events-auto
                   ${copied ? 'border-green-500 text-green-500' : 'border-white/10 text-zinc-500 hover:text-white'}`}
               >
                 {copied ? <CheckCircle2 className="w-5 h-5" /> : <Copy className="w-5 h-5 group-hover:scale-110" />}
               </button>
               <button 
+                id="guide-target-btn-optimize"
                 onClick={onOptimize}
-                disabled={isOptimizing}
+                disabled={isOptimizing || !isValid}
                 title="AI 润色"
-                className={`w-16 h-16 flex items-center justify-center bg-zinc-900 border rounded-2xl transition-all disabled:opacity-30 group
+                className={`w-16 h-16 flex items-center justify-center bg-zinc-900 border rounded-2xl transition-all disabled:opacity-30 group pointer-events-auto
                   ${hasEnhanced ? 'border-blue-500/30 text-blue-400' : 'border-white/10 text-zinc-500 hover:text-blue-500 hover:border-blue-500/50'}`}
               >
                 <Wand2 className={`w-5 h-5 group-hover:rotate-12 transition-transform ${isOptimizing ? 'animate-pulse text-blue-500' : ''}`} />

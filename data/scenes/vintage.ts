@@ -8,15 +8,6 @@ export const vintageScene: SceneDefinition = {
   description: '还原唐宋风华与明清雅韵，专注于汉服质感与东方园林意境的深度重构。',
   icon: 'Film',
   isAvailable: true,
-  defaults: {
-    subject: 'A graceful 25-year-old Chinese woman in a refined Ming-style Hanfu, porcelain skin, intricate hair ornaments, holding a silk round fan',
-    environment: 'misty traditional Jiangnan garden with moon gates and weeping willows',
-    camera: 'Sony A7R V with 50mm f/1.2 GM',
-    cameraSettings: 'f/1.8, 1/125s, ISO 100, filmic grain',
-    lighting: 'soft diffused dawn light, ethereal atmosphere',
-    medium: 'vintage film photography',
-    quality: 'ultra-detailed silk textures, authentic historical accuracy'
-  },
   fields: {
     subject: {
       valueType: 'text',

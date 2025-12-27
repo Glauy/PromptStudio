@@ -8,15 +8,6 @@ export const narrativeScene: SceneDefinition = {
   description: '每一帧都是电影。专注于人物命运的交汇点，捕捉极具故事张力的视觉切片。',
   icon: 'MessageSquare',
   isAvailable: true,
-  defaults: {
-    subject: 'A 25-year-old Chinese couple meeting at a rainy bus stop under a single warm street lamp',
-    environment: 'empty modern city street at night, wet asphalt reflecting city lights',
-    mood: 'nostalgic and romantic, cinematic longing',
-    camera: 'ARRI Alexa 35 with Cooke Anamorphic/i S7 lenses',
-    cameraSettings: 'T2.3, 24fps motion blur, cinematic 2.39:1 aspect ratio',
-    lighting: 'dramatic key light, moody shadows, soft rain texture',
-    medium: 'movie still, cinematic storytelling'
-  },
   fields: {
     subject: {
       valueType: 'text',
